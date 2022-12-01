@@ -1,0 +1,12 @@
+about: >-
+  Versioning Tool for maintaining project versions while releasing
+author: rohitnairtech <puthenrohit@gmail.com>
+name: Project versioning tool
+args:
+  - release_type:
+      short: r
+      long: type
+      help: Specifies the release type
+      required: true
+      takes_value: true
+version: '1.0'
