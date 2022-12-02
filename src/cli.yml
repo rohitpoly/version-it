@@ -1,6 +1,6 @@
 about: >-
   Versioning Tool for maintaining project versions while releasing
-author: rohitnairtech <puthenrohit@gmail.com>
+author: rohitpoly <rohit@polytrade.finance>
 name: Project versioning tool
 args:
   - release_type:
