@@ -1,7 +1,16 @@
 {
-  "name": "lenderpool-v2",
-  "version": "2.0.5",
-  "private": true,
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
   "dependencies": {
     "@ahrvocomply/ahrvo-comply-react-sdk": "^0.4.4",
     "@biconomy/hyphen-widget": "^0.0.8",
@@ -69,39 +78,30 @@
     "prettier": "^2.6.2",
     "xo": "^0.48.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build:prod": "env-cmd -f ./.env.production npm run-script build",
-    "build:dev": "env-cmd -f ./.env.dev npm run-script build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint --ext .js src && eslint --ext .jsx src",
-    "lint:fix": "npx eslint --ext .js src && eslint --ext .jsx src --fix",
-    "xo": "npx xo .",
-    "xo:fix": "npx xo --fix .",
-    "prepare": "husky install",
-    "cont-int": "npm test && npm run lint"
-  },
   "eslintConfig": {
-    "globals": {
-      "window": true
-    },
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "globals": {
+      "window": true
+    }
+  },
+  "name": "lenderpool-v2",
+  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "build:dev": "env-cmd -f ./.env.dev npm run-script build",
+    "build:prod": "env-cmd -f ./.env.production npm run-script build",
+    "cont-int": "npm test && npm run lint",
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .js src && eslint --ext .jsx src",
+    "lint:fix": "npx eslint --ext .js src && eslint --ext .jsx src --fix",
+    "prepare": "husky install",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "xo": "npx xo .",
+    "xo:fix": "npx xo --fix ."
+  },
+  "version": "5.5.0"
 }

@@ -15,7 +15,7 @@ fn main(){
 
     let cwd = current_dir().unwrap();
     let path: String = String::from(cwd.to_string_lossy());
-    let full_path = path + "/src/package.json";
+    let full_path = path + "/package.json";
     let package_json = read_to_string(full_path.clone()).expect("Unable to read file");
 
     let mut json: serde_json::Value = serde_json::from_str(&package_json)
@@ -34,10 +34,9 @@ fn main(){
         println!("Please enter valid release type. [ patch | minor | major ]");
     }
 
+    println!("New release version {}", version);
     version.pop();
     version.remove(0);
-
-    println!("New release version {}", version);
     json["version"] = serde_json::Value::String(version);
     write(full_path, serde_json::to_string_pretty(&json).unwrap()).expect("Unable to write file");
     println!("package.json updated!");
